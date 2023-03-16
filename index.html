@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Comments</title>
+</head>
+
+<body>
+  <header>
+    <h1>Блок для комментариев</h1>
+    <h2>Поделитесь своими мыслями!</h2>
+  </header>
+
+  <main>
+    <form class="container" action="post">
+      <input id="comment-username" type="text" placeholder="Ваш никнейм">
+      <p class="validation-error">Ошибка валидации</p>
+      <input id="comment-text" type="text" placeholder="Текст комментария">
+      <p class="validation-error">Ошибка валидации</p>
+      <input id="comment-date" type="text" placeholder="Дата в формате ММ.ДД.ГГГГ">
+      <p class="validation-error">Ошибка валидации</p>
+      <br>
+      <button class="submit-button" type="submit">Отправить</button>
+    </form>
+
+    <div class="container main-comments">
+      <div class="main-comments-header">
+        <h3>Количество комментариев</h3>
+      </div>
+      <div class="main-comments-items">
+        <div class="main-comments-item">
+          <p class="comments-item-username">test test</p>
+          <p class="comments-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam error omnis. Rerum ipsum similique reprehenderit. Ratione consequuntur explicabo omnis quas, nobis magnam animi ad vel voluptate iusto reprehenderit odit.</p>
+          <p class="comments-item-date">05.12.2002</p>
+          <button class="delete-button">Удалить</button>
+          <p class="like">Лайк</p>
+        </div>
+        <div class="main-comments-item">
+          <p class="comments-item-username">test test</p>
+          <p class="comments-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt totam error omnis.
+            Rerum ipsum similique reprehenderit. Ratione consequuntur explicabo omnis quas, nobis magnam animi ad vel voluptate
+            iusto reprehenderit odit.</p>
+          <p class="comments-item-date">09.12.2002</p>
+          <button class="delete-button">Удалить</button>
+          <p class="like">Лайк</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-date"></p>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>
