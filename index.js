@@ -39,14 +39,12 @@ commentUsername.addEventListener("change", (event) => {
 	const usernameValidation = event.target.value.match(
 		new RegExp(/[a-zA-Z0-9]{1,}/)
 	);
-	console.log(usernameValidation);
 	if (
 		event.target.value.length == 0 ||
     usernameValidation.length > 1 ||
     !usernameValidation ||
     usernameValidation[0] < usernameValidation.input
 	) {
-		console.log(validErrors[0]);
 		validErrors[0].style.display = "block";
 	}
 	comment.username = usernameValidation[0];
@@ -60,14 +58,12 @@ commentText.addEventListener("change", (event) => {
 	const textValidation = event.target.value.match(
 		new RegExp(/[ а-яА-Яa-zA-Z0-9.,?!=+-/*@#$^:;'"]{1,}/g)
 	);
-	console.log(textValidation);
 	if (
 		event.target.value.length == 0 ||
     textValidation.length > 1 ||
     !textValidation ||
     textValidation[0] < textValidation.input
 	) {
-		console.log(validErrors[1]);
 		validErrors[1].style.display = "block";
 	}
 	comment.text = textValidation[0];
@@ -81,13 +77,11 @@ commentDate.addEventListener("change", (event) => {
 	const dateValidation = event.target.value.match(
 		new RegExp(/[01]{1}[0-9]{1}.[0123]{1}[0-9]{1}.[0-9]{4}/)
 	);
-	console.log(dateValidation);
 	if (
 		!dateValidation ||
     dateValidation.length > 1 ||
     dateValidation[0] < dateValidation.input
 	) {
-		console.log(validErrors[2]);
 		validErrors[2].style.display = "block";
 	} else {
 		if (new Date(dateValidation[0]) == "Invalid Date") {
@@ -100,7 +94,6 @@ commentDate.addEventListener("change", (event) => {
 
 submitButton.addEventListener("click", (event) => {
 	event.preventDefault();
-	console.dir(validErrors);
 	if (
 		comment.username &&
     comment.text &&
@@ -111,7 +104,6 @@ submitButton.addEventListener("click", (event) => {
       validErrors[2].style.display == "")
 	) {
 		const newComment = document.createElement("div");
-		console.dir(newComment);
 		newComment.classList.add("main-comments-item");
 
 		const newUsername = document.createElement("p");
@@ -165,7 +157,8 @@ submitButton.addEventListener("click", (event) => {
 					: new Date().getDate()
 			}.${new Date().getFullYear()}`,
 		};
+		commentUsername.textContent = "";
+		commentText.textContent = "";
+		commentDate.textContent = "";
 	}
 });
-
-console.dir(commentsBlock);
