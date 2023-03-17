@@ -157,8 +157,8 @@ submitButton.addEventListener("click", (event) => {
 					: new Date().getDate()
 			}.${new Date().getFullYear()}`,
 		};
-		commentUsername.textContent = "";
-		commentText.textContent = "";
-		commentDate.textContent = "";
+		commentUsername.value = "";
+		commentText.value = "";
+		commentDate.value = "";
 	}
 });
